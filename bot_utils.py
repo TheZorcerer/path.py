@@ -13,3 +13,9 @@ def check_guilds(client):
 	json.dump(guild_preferences,f)
 	f.close()
 	return guild_preferences
+
+def save_preferences(client):
+	with open("guild_prefs.json","w") as f:
+		json.dump(client.guild_preferences,f)
+		f.close()
+	print("saved it!")

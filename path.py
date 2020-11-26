@@ -2,9 +2,16 @@ import json
 import discord
 import command_handler
 import bot_utils
+import signal
+import sys
 
 client = discord.Client()
 handler = command_handler.handler(client)
+
+def on_exit(signal, frame):
+	bot_utils.save_preferences(client)
+	print("closing!")
+	sys.exit(0)
 
 
 @client.event
@@ -15,7 +22,11 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    handler.handle(message,client.guild_preferences)
+	reply = handler.handle(message)
+	if(reply != None):
+		print(reply)
+		await message.channel.send(reply)
 
 with open("token.txt") as token:
+	signal.signal(signal.SIGINT, on_exit)
 	client.run(token.read())
