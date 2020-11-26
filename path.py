@@ -24,7 +24,6 @@ async def on_ready():
 async def on_message(message):
 	reply = handler.handle(message)
 	if(reply != None):
-		print(reply)
 		await message.channel.send(reply)
 
 with open("token.txt") as token:
