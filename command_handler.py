@@ -15,6 +15,8 @@ class handler():
 		module = data[0][len(prefix):7].lower()
 		if(module == "server"):
 			return self.server(message)
+		elif(module == "gun"):
+			return self.gun(message)
 		pass
 
 	def server(self,message):
@@ -25,3 +27,7 @@ class handler():
 				return "I have changed the prefix to " + data[2]
 		else:
 			return "You aint tazer"
+
+	def gun(self,message):
+		pass
+
