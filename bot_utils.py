@@ -41,6 +41,6 @@ def weapon_help(weapons,page):
 		return "Not a valid page"
 	embed = discord.Embed(title="All Weapons",description="The list of all weapons and the associated id's. You can use the id to search for them by =gun <id>",color=0x00ff00)
 	for n in range((page-1)*10,min((page)*10+1,len(weapons)+1)):
-		embed.add_field(name = str(n)+". "+ weapons[n][0], value = "ID: "+weapons[n][1],inline=False)
+		embed.add_field(name = str(n+1)+". "+ weapons[n][0], value = "ID: "+weapons[n][1],inline=False)
 	embed.set_footer(text = "Use =gun help <page> for the next set of weapons")
 	return embed
