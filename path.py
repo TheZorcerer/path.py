@@ -17,6 +17,7 @@ def on_exit(signal, frame):
 @client.event
 async def on_ready():
 	print("logged in as"+str(client))
+	await client.change_presence(activity=discord.Game(name='=gun help'))
 	guild_preferences = bot_utils.check_guilds(client)
 	client.guild_preferences = guild_preferences
 
