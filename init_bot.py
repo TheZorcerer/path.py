@@ -1,0 +1,6 @@
+f = open("token.txt","w")
+f.write(input("your token? "))
+f.close()
+f2 = open("guild_prefs.json","w")
+f2.write("{}")
+f2.close()
