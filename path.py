@@ -24,7 +24,10 @@ async def on_ready():
 async def on_message(message):
 	reply = handler.handle(message)
 	if(reply != None):
-		await message.channel.send(reply)
+		if(type(reply) == type("never gonna give you up")):
+			await message.channel.send(reply)
+		else:
+			await message.channel.send(embed=reply)
 
 with open("token.txt") as token:
 	signal.signal(signal.SIGINT, on_exit)
