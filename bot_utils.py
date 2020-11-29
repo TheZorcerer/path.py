@@ -8,6 +8,7 @@ def check_guilds(client):
 		if(str(guild.id) not in list(guild_preferences.keys())):
 			print("new guild with ID",guild.id)
 			guild_preferences[guild.id] = {"allowed_channels":[],"on":True,"prefix":"="}
+	client.guild_preferences = guild_preferences
 	f.close()
 	f = open("guild_prefs.json","w+")
 	json.dump(guild_preferences,f)

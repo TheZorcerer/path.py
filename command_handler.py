@@ -68,3 +68,5 @@ class handler():
 		else:
 			return "Bot is not allowed in this channel"
 
+	def gulag(self,message):
+		pass
