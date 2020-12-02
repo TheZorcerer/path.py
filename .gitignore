@@ -125,3 +125,8 @@ dmypy.json
 .pyre/
 token.txt
 guild_prefs.json
+project_lighthouse/Project Lighthouse - Sniper Rifles.csv
+project_lighthouse/attachments.csv
+project_lighthouse/data.py
+project_lighthouse/link.txt
+project_lighthouse/weapons.csv
